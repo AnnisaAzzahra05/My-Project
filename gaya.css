@@ -431,7 +431,7 @@ footer {
 }
 
 .foot-section-logo img {
-  width: 100%; /* Made responsive */
+  width: 200px; /* Made responsive */
   max-width: 300px; /* Limits the max width */
   margin: auto;
   border-radius: 20px; /* Adjusted for better appearance */
