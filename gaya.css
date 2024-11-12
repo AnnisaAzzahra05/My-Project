@@ -1,6 +1,4 @@
-c
-
-html body{
+html, body {
   height: 100%;
   width: 100%;
 }
@@ -14,7 +12,13 @@ body {
   flex-direction: column;
   background-color: #ee8d4a;
 }
- 
+/* Global Styles */
+h1, h2, h3, p {
+  margin: 0; /* Menghapus margin default */
+  line-height: 1.5; /* Meningkatkan keterbacaan */
+}
+
+/* Header */
 .header {
   background-color: coral;
   padding: 10px;
@@ -36,274 +40,536 @@ header.navbar-container {
 
   z-index: 9999;
 }
- 
+
 header.navbar-container .logo img {
-  width: 150px;
-}
- 
-header.navbar-container .nav-list ul {
-  padding-left: 0;
- 
-  display: flex;
-  justify-content: center;
-  gap: 2rem 1rem;
-}
- 
-header.navbar-container .nav-list li {
-  list-style-type: none;
-}
- 
-header.navbar-container .nav-list li a {
-  padding: 0.5rem 1.5rem;
-  border-radius: 999px;
- 
-  text-decoration: none;
-  font-size: 1.05rem;
-  font-weight: 500;
-  color: black;
- 
-  transition: all 0.2s ease-in-out;
-}
- 
-header.navbar-container .nav-list li:hover a {
-  background-color: #ee8d4a;
-  color: white;
+  width: 120px; /* Adjusted logo width for responsiveness */
+  max-width: 100%; /* Ensure it doesn't exceed the container */
+  height: auto; /* Maintain aspect ratio */
+  margin-right: 0.5rem; /* Reduced margin to decrease gap */
+  margin: 0 auto;
+  display: block;
+  
 }
 
+header.navbar-container .nav-list ul {
+  width: 100%;
+  padding: 0; /* Remove default padding */
+  display: flex; /* Flexbox for nav items */
+  justify-content: center; /* Center nav items */
+  align-items: center; /* Center items vertically */
+  list-style: none; /* Remove bullet points */
+  flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+}
+
+header.navbar-container .nav-list li {
+  margin: 0 0.5rem; /* Reduced horizontal margin for spacing */
+}
+
+header.navbar-container .nav-list li a {
+  padding: 0.5rem 1rem; /* Padding for nav links */
+  border-radius: 999px; /* Rounded links */
+  text-decoration: none; /* Remove underline */
+  font-size: 1rem; /* Font size */
+  font-weight: 500; /* Font weight */
+  color: black; /* Text color */
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* Smooth transition */
+}
+
+header.navbar-container .nav-list li:hover a {
+  background-color: #ee8d4a; /* Background color on hover */
+  color: white; /* Text color on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .header, .navbar-container {
+    padding: 0.5rem;
+    align-items: center;
+    text-align: center;
+  }
+
+  header.navbar-container .nav-list ul {
+    justify-content: flex-start; /* Align nav items to the left */
+    width: 100%; /* Full width for nav list */
+  }
+
+  header.navbar-container .nav-list li {
+    margin: 0.5rem 0; /* Vertical margin for stacked items */
+  }
+
+  header.navbar-container .logo img {
+    width: 100px; /* Smaller logo on mobile */
+  }
+}
+
+/* Main Content */
 main {
   flex: 1;
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-
 }
- 
+
 main .content {
-
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    padding: 2rem;
-    background-color: #fff4eb;
-    margin-bottom: 5rem;
+  width: 100%; /* Full width */
+  max-width: 1200px; /* Limit max width for larger screens */
+  display: flex; /* Flexbox for layout */
+  justify-content: space-between; /* Space between image and description */
+  align-items: center; /* Center items vertically */
+  text-align: left; /* Align text to the left */
+  padding: 50px; /* Padding for spacing */
+  background-color: #fff4eb; /* White background for content */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  margin-bottom: 2rem; /* Space below the content */
 }
- 
+
 main .content .content-description {
-  flex: 1 1;
-  text-align: left;
-  margin-left: 100px;
-}
- 
-main .content .content-description .title {
-  margin-block: 1rem;
- 
-  font-size: 3.5rem;
-}
- 
-main .content .content-description p {
-  font-size: 1.2rem;
-  line-height: 1.7rem;
-}
- 
-main .content .content-description button {
-  padding: 0.8rem 2.5rem;
-  border: 3px solid transparent;
-  border-radius: 999px;
-  margin-block-start: 1rem;
- 
-  background-color: #ee8d4a;
- 
-  font-family: 'Quicksand', sans-serif;
-  text-transform: uppercase;
-  font-size: 1rem;
-  font-weight: 700;
-  color: white;
- 
-  cursor: pointer;
-  transition: all 0.15s ease-in;
-}
- 
-main .content .content-description button:hover {
-  border: 3px solid #ee8d4a;
-  background-color: transparent;
- 
-  color: #ee8d4a;
-}
- 
-main .content .content-image {
-  flex: 1;
- 
-  display: flex;
-  
-}
- 
-main .content .content-image img {
-  width: 300px;
-  min-width: 250px;
-  margin: auto;
-  border-radius:  20px;
+  flex: 1; /* Allow description to grow */
+  margin-right: 2rem; /* Space between description and image */
 }
 
-aside{
-    font-family: 'Roboto', sans-serif;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 2rem;
-    justify-content: center;
-    text-align: center;
-    max-width: 800px;
-    min-height: 500px;
-    margin-inline: auto;
+main .content .content-description .title {
+  margin: 0; /* Remove default margin */
+  font-size: 3rem; /* Title size */
+  color: #333; /* Dark color for contrast */
+}
+
+main .content .content-description p {
+  font-size: 1.2rem; /* Description size */
+  line-height: 1.6; /* Line height for readability */
+  margin: 1rem 0; /* Margin for spacing */
+  color: #555; /* Lighter color for description */
+}
+
+main .content .content-description button {
+  padding: 0.8rem 2.5rem; /* Button padding */
+  border: none; /* Remove border */
+  border-radius: 999px; /* Rounded button */
+  background-color: #ee8d4a; /* Button background color */
+  font-family: 'Quicksand', sans-serif; /* Font family */
+  text-transform: uppercase; /* Uppercase text */
+  font-size: 1rem; /* Button text size */
+  font-weight: 700; /* Button text weight */
+  color: white; /* Button text color */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+main .content .content-description button:hover {
+  background-color: transparent; /* Change background on hover */
+  color: #ee8d4a; /* Change text color on hover */
+}
+
+main .content .content-image {
+  flex: 1; /* Allow image to grow */
+  display: flex; /* Use flexbox for centering */
+  justify-content: center; /* Center image horizontally */
+}
+
+main .content .content-image img {
+  width: 100%; /* Responsive image */
+  max-width: 400px; /* Limit max width for the image */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Responsive Design for Main Content */
+@media (max-width: 768px) {
+  main .content {
+    flex-direction: column; /* Stack vertically on smaller screens */
+    align-items: center; /* Center items */
   }
+
+  main .content .content-description {
+    margin-right: 0; /* Remove right margin */
+    text-align: center; /* Center text */
+  }
+
+  main .content .content-image {
+    margin-top: 1rem; /* Add space above image */
+  }
+}
+
+/* Sale Item Section */
+aside {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-flow: row wrap;
+  gap: 1.5rem; /* Space between items */
+  justify-content: center; /* Center items */
+  text-align: center;
+  max-width: 800px; /* Limit the max width to prevent overlap */
+  margin: 2rem auto; /* Center aside with margin */
+  padding: 1rem; /* Padding for spacing */
+}
 
 .sale-item {
-    display: flex;
-    flex-flow: column;
-    flex: 0 1 300px;
-
-    background-color:#fff4eb;
-    padding: 1rem 1.5rem;
-    border: 8px solid #fff4eb;
-  }
-
-.sale-item > img {
-    order: -1;
-    align-self: center;
-
-    width: 200px;
-    height: 200px;
-    border-radius: 20px;
-    transform: scale(1.01);
-    object-fit: cover;
-    object-position: top;
-  }
-
-.sale-item p {
-    margin-block: 0.5rem;
-    text-align: center;
-  }
-
-.sale-item:last-of-type {
-    object-position: 20% center;
-  }
-
-  @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+  display: flex;
+  flex-direction: column; /* Stack image and description vertically */
+  flex: 0 1 250px; /* Allow items to grow and shrink */
+  background-color: #fff4eb; /* Background color */
+  padding: 1rem; /* Internal padding */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: transform 0.2s ease; /* Animation for hover effect */
+  align-items: center; /* Center items horizontally */
 }
 
-
-.fade-in-box {
-    width: 100%;
-    height: 100%;
-    opacity: 0; 
-    animation: fadeIn 2s forwards; 
+.sale-item:hover {
+  transform: scale(1.05); /* Scale effect on hover */
 }
 
+.sale-item img {
+  width: 100%; /* Responsive image */
+  max-width: 200px; /* Limit the max width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 10px; /* Rounded corners */
+  margin-bottom: 1rem; /* Space below the image */
+}
+
+.sale-item .item-title {
+  font-size: 1.5rem; /* Title size */
+  margin: 0.5rem 0; /* Margins for spacing */
+  color: #333; /* Darker color for contrast */
+}
+
+.sale-item .item-price {
+  font-size: 1.2rem; /* Price size */
+  color: #ee8d4a; /* Color for price */
+  font-weight: bold; /* Bold for emphasis */
+}
+
+.sale-item .item-description {
+  font-size: 1rem; /* Description size */
+  margin: 0.5rem 0; /* Margins for spacing */
+  color: #666; /* Lighter color for description */
+}
+
+/* Responsive Design for Sale Items */
+@media (max-width: 768px) {
+  .sale-item {
+    flex: 1 1 200px; /* Allow items to be smaller on smaller screens */
+  }
+
+  .sale-item .item-title {
+    font-size: 1.3rem; /* Adjust title size */
+  }
+
+  .sale-item .item-price {
+    font-size: 1rem; /* Adjust price size */
+  }
+
+  .sale-item .item-description {
+    font-size: 0.9rem; /* Adjust description size */
+  }
+}
+
+@media (max-width: 480px) {
+  .sale-item {
+    flex: 1 1 150px; /* Allow items to be even smaller */
+  }
+
+  .sale-item .item-title {
+    font-size: 1.2rem; /* Smaller title size */
+  }
+
+  .sale-item .item-price {
+    font-size: 0.9rem; /* Smaller price size */
+  }
+
+  .sale-item .item-description {
+    font-size: 0.8rem; /* Smaller description size */
+  }
+}
+
+/* Article */
 article {
   flex: 1;
   width: 100%;
-  max-width: 1200px;
+  max-width: 1200px; /* Keep the max width for larger screens */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: auto;
-  }
-   
-article .content{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    text-align: left;
-    padding: 2rem;
-    background-color: #fff4eb;
-    margin-bottom: 5rem;
-    margin-top: 5rem;
-    border-radius: 20px;
-    flex-direction: row; 
-  }
+  margin: 2rem auto; /* Center article with margin */
+  padding: 1rem; /* Add padding for better spacing */
+}
+
+article .content {
+  width: 100%;
+  display: flex;
+  flex-direction: row; /* Keep horizontal layout on larger screens */
+  justify-content: space-between; /* Space out image and description */
+  align-items: center;
+  padding: 2rem;
+  background-color: #fff4eb;
+  margin-bottom: 5rem;
+  border-radius: 20px; /* Rounded corners */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
 
 article .content-image {
-    flex: 1;
-    display: flex;
-    justify-content: left;
-    align-items: center;
-  } 
+  flex: 1;
+  display: flex;
+  justify-content: center; /* Center image */
+  align-items: center;
+}
 
 article .content-image img {
-  width: 300px;
-  min-width: 250px;
-  margin: auto;
-  border-radius:  900px;
-  }
+  width: 100%; /* Made responsive */
+  max-width: 300px; /* Limits the max width */
+  height: auto; /* Maintain aspect ratio */
+  border-radius: 20px; /* Rounded corners */
+}
 
 article .content-description {
-    flex: 2;
-    text-align: justify;
-    margin-right: 2rem; 
-}
-   
-  article .content .content-description .title {
-    margin-block: 1rem;
-   
-    font-size: 24px;
-  }
-   
-  article .content .content-description p {
-    font-size: 14px;
-    line-height: 1.7rem;
-  }
-
-  .logo img {
-    width: 150px;
+  flex: 2; /* Allow more space for description */
+  text-align: left; /* Left align text for readability */
+  margin-left: 2rem; /* Space between image and description */
 }
 
+article .content-description .title {
+  margin-block: 1rem;
+  font-size: 2.5rem; /* Responsive title size */
+  color: #333; /* Darker color for contrast */
+}
+
+article .content-description p {
+  font-size: 1.2rem; /* Increase paragraph size */
+  line-height: 1.6rem; /* Improve line height for readability */
+  margin-bottom: 1rem; /* Space between paragraphs */
+}
+
+/* Responsive Design for Article */
+@media (max-width: 768px) {
+  article .content {
+    flex-direction: column; /* Stack image and description vertically */
+    align-items: center; /* Center items */
+    padding: 1rem; /* Adjust padding */
+  }
+
+  article .content-description {
+    margin-left: 0; /* Remove left margin */
+    text-align: center; /* Center text on smaller screens */
+  }
+
+  article .content-description .title {
+    font-size: 2rem; /* Responsive title size for smaller screens */
+  }
+
+  article .content-description p {
+    font-size: 1rem; /* Adjust paragraph size */
+  }
+
+  article .content-image img {
+    max-width: 80%; /* Limit image size on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  article .content-description .title {
+    font-size: 1.5rem; /* Smaller title size for very small screens */
+  }
+
+  article .content-description p {
+    font-size: 0.9rem; /* Smaller paragraph size */
+  }
+}
+
+
+/* Footer */
 footer {
   width: 100%;
-  height: 100%;
   display: flex;
   justify-content: space-around;
   align-items: flex-start;
   background-color: #fff4eb;
-  padding: 2rem;
+  padding: 30px;
+  padding-right: 0%;
+  flex-wrap: wrap; /* Allow wrapping for smaller screens */
 }
 
 .foot-section {
-    flex: 1;
-    padding: 0 20px;
+  flex: 1;
+  padding: 0 20px;
+  min-width: 200px; /* Ensure a minimum width for each section */
+  text-align: center; /* Center text for better alignment */
 }
 
 .foot-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
 }
 
 .foot-list li {
-    margin-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .foot-list li a {
-    color: black;
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 1.05rem;
+  color: black;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.05rem;
+}
+
+.foot-list li a:hover {
+  color: #ee8d4a;
+  text-decoration: underline;
 }
 
 .foot-title {
-    font-weight: bold;
-    margin-bottom: 1rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
 }
 
 .foot-foot {
-  align-self: flex-end;
+  text-align: center;
+  width: 100%;
+  margin-top: 1rem;
 }
 
+.foot-section-logo img {
+  width: 100%; /* Made responsive */
+  max-width: 300px; /* Limits the max width */
+  margin: auto;
+  border-radius: 20px; /* Adjusted for better appearance */
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column; /* Stack footer sections vertically */
+    align-items: center; /* Center items */
+    padding: 1rem; /* Reduce padding for smaller screens */
+  }
+
+  .foot-section {
+    margin-bottom: 1rem; /* Space between sections */
+    padding: 0; /* Remove padding for smaller screens */
+  }
+
+  .foot-title {
+    font-size: 1.2rem; /* Responsive footer title size */
+  }
+
+  .foot-list li {
+    font-size: 0.9rem; /* Responsive footer list item size */
+  }
+}
+
+@media (max-width: 480px) {
+  .foot-section {
+    min-width: 100%; /* Ensure sections take full width */
+  }
+
+  .foot-title {
+    font-size: 1rem; /* Smaller footer title size */
+  }
+
+  .foot-list li {
+    font-size: 0.8rem; /* Smaller list item size */
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header, .navbar-container {
+    flex-direction: column;
+    padding: 1rem;
+  }
+
+  .content-description {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  main .content {
+    flex-direction: column;
+    padding: 1rem; /* Adjust padding for smaller screens */
+  }
+
+  .sale-item {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .content-image img,
+  article .content-image img {
+    width: 80%;
+    height: auto;
+  }
+
+  .foot-section {
+    text-align: center;
+    padding: 0.5rem;
+  }
+
+  .foot-section-logo img {
+    width: 80%; /* Adjust for smaller screens */
+    max-width: 250px; /* Adjust max width */
+  }
+
+  article .content-description .title {
+    font-size: 1.5rem; /* Responsive font size */
+  }
+
+  article .content-description p {
+    font-size: 1rem; /* Responsive font size */
+  }
+}
+
+/* Additional media query for very small screens */
+@media (max-width: 480px) {
+  .header, .navbar-container {
+   font-size: 16px; /* Smaller font size for very small screens */
+  }
+
+  header.navbar-container .nav-list li a {
+    padding: 0.3rem 1rem; /* Adjust padding for buttons */
+    font-size: 0.9rem; /* Smaller font size for links */
+  }
+
+  main .content .content-description .title {
+    font-size: 2.5rem; /* Reduce title size */
+  }
+
+  main .content .content-description p {
+    font-size: 1rem; /* Reduce paragraph size */
+  }
+
+  .sale-item {
+    padding: 0.5rem; /* Adjust padding for sale items */
+  }
+
+  .sale-item > img {
+    max-width: 150px; /* Limit image size */
+  }
+
+  article .content-description .title {
+    font-size: 1.5rem; /* Responsive font size */
+  }
+
+  article .content-description p {
+    font-size: 0.9rem; /* Responsive font size */
+  }
+
+  footer {
+    flex-direction: column; /* Stack footer sections */
+    padding: 1rem; /* Adjust padding */
+    width: auto;
+  }
+
+  .foot-section {
+    padding: 0.5rem; /* Adjust padding for footer sections */
+  }
+
+  .foot-title {
+    font-size: 1.2rem; /* Responsive footer title size */
+  }
+
+  .foot-list li {
+    font-size: 0.9rem; /* Responsive footer list item size */
+  }
+}
